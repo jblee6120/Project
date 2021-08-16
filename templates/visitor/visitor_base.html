@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>이용자 화면</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <style>
+            #title{
+                text-align: center;
+            }
+            #main{
+                text-align: center;
+            }
+            #search{
+                display: inline-block;
+            }
+            #mainsearch{
+                display: table;
+            }
+            .form1{
+                font-size: 3rem;
+                height: 100%;
+                font-weight: 540;
+                border: 1px solid gray;
+                padding: 6px;
+                width: 700px;
+                vertical-align: top;
+            }
+            .button{
+                font-size: 3rem;
+                height: 100%
+            }
+            .row{
+                text-align: center !important;
+                margin: 0 0 0;
+            }
+            table{
+                border: 4px solid black;
+                margin-left:auto;
+                margin-right:auto;
+                min-width: 700px;
+            }
+            #booklist{
+                margin: 0 0 0;
+            }
+            td{
+                padding-top: 4px;
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-bottom: 4px;
+                font-size: 2.5rem;
+                font-weight: bolder;
+                text-align: center;
+                border: 2px solid black;
+                color: black;
+            }
+            .contents>td:hover{
+                cursor: pointer;
+                color:cadetblue;
+            }
+        </style>
+    </head>
+    <body>
+        {% block content %}
+        {% endblock %}
+    </body>
+
+</html>

@@ -1,0 +1,77 @@
+{% comment %}
+처음 화면용 html 페이지
+{% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select which type of user</title>
+    <style>
+        #title {
+            text-align: center;
+            width: 300px;
+            border: 2px solid red;
+            position: relative;
+            margin: 150px auto 30px;
+        }
+
+        #user {
+            width: 150px;
+            height: 80px;
+            font-size: 2rem;
+            background-color: cornflowerblue;
+            border-color: black;
+            position: relative;
+        }
+
+        #manager {
+            width: 150px;
+            height: 80px;
+            font-size: 2rem;
+            background-color: cornflowerblue;
+            border-color: black;
+            position: relative;
+        }
+
+        .button {
+            display: inline-block;
+        }
+        #main{
+            text-align: center;
+        }
+        .admin{
+            text-align: center;
+            margin: 30px;
+        }
+        .admin>a{
+            border: 2px solid black;
+            color: black;
+            font-size: 1.3rem;
+            padding: 5px 15px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div id="title">
+    <p><h2>도서관 로봇</h2></p>
+    <p><h3>사용할 기능을 고르세요.</h3></p>
+
+</div>
+<div id="main">
+    <form id="find" class="button" action="/visitor/">
+        {% csrf_token %}
+        <input id="user" type="submit" value="이용자">
+    </form>
+    <form id="manage" class="button" action="/worker/">
+        {% csrf_token %}
+        <input id="manager" type="submit" value="근로자">
+    </form>
+</div>
+<div class="admin">
+    <a href="/admin/">
+            관리자 페이지로
+    </a>
+</div>
+</body>
+</html>

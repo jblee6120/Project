@@ -1,0 +1,64 @@
+{% extends 'visitor/visitor_base.html' %}
+
+{% block content %}
+
+
+    <div id="title">
+        <h1>도서 검색창</h1>
+    </div>
+    <div id="main">
+        <form id="search" action="" method="GET">
+            <div id="mainsearch">
+                <input class="form1" type="text" name="search_key" value="{{search_key}}" placeholder="looking for...">
+                <input class="button" type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        제목
+                    </td>
+                    <td>
+                        저자
+                    </td>
+                    <td>
+                        위치
+                    </td>
+                </tr>
+                {% for book in booklist %}
+                    <tr class="contents" onclick="check()">
+                        <td>
+                            {{book.title}}
+                        </td>
+                        <td>
+                            {{book.author}}
+                        </td>
+                        <td>
+                            {{book.location}}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script language="javascript">
+    
+        function check(){
+            var is = confirm(" 이 책을 찾으시겠습니까?");
+            if(is){
+                location.href="./start_or_not/";
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    
+
+    </script>
+
+{% endblock %}

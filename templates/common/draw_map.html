@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>지도</title>
+        <style>
+            #app {
+                display:inline-block;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: black;
+            }
+            #main {
+                text-align: left;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #map{
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>{{searched_book.title}}으로 가는 지도 그리기</h1>
+        {% load static %}
+        <div id="main">
+        <img id="map" src="{% static 'map.png' %}">
+        
+        </div>
+        <div id="app">{{ message }}</div>
+
+        <script>
+
+            let socket = new WebSocket('ws://localhost:8000/ws/some_url/');
+            socket.onmessage = function(event){
+                let data = JSON.parse(event.data);
+                console.log(data);
+                document.querySelector('#app').style.bottom = (data.message*40) + 130 + 'px';
+            }
+
+            function stop(close_code){
+                location.href = "../";
+                close_code = "close_code";
+
+
+            }
+        </script>
+    </body>
+</html>

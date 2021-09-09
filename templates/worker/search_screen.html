@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>도서검색</Title>
+    <style>
+        #search {
+
+        }
+        #main{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>바코드를 입력하세요</h1>
+        <form action="" method="get">
+
+        <input id="search" type="text" name="search" autofocus>
+            <input type="submit" value="검색">
+        </form>
+        {% for book in data %}
+        {{ book.title }}
+        {% endfor %}
+    <form action="/drawmap/" method="get">
+        <input type="submit" value="검색">
+    </form>
+    </div>
+</body>
+</html>

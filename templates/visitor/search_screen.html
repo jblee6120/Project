@@ -29,7 +29,7 @@
                     </td>
                 </tr>
                 {% for book in booklist %}
-                    <tr class="contents" onclick="check()">
+                    <tr class="contents" onclick="check('{{ book.title }}','{{ book.id }}');">
                         <td>
                             {{book.title}}
                         </td>
@@ -47,10 +47,10 @@
     </div>
     <script language="javascript">
     
-        function check(){
-            var is = confirm(" 이 책을 찾으시겠습니까?");
+        function check(title, id){
+            var is = confirm(title+" 이 책을 찾으시겠습니까?");
             if(is){
-                location.href="./start_or_not/";
+                location.href="./drawmap/"+id;
                 return true;
             }
             else{

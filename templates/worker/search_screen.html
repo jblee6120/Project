@@ -17,14 +17,12 @@
         <form action="" method="get">
 
         <input id="search" type="text" name="search" autofocus>
-            <input type="submit" value="검색">
+            <input type="submit" value="입력">
         </form>
         {% for book in data %}
-        {{ book.title }}
+        {{ book.title }}<br>
         {% endfor %}
-    <form action="/drawmap/" method="get">
-        <input type="submit" value="검색">
-    </form>
+    <button onclick="location.href='./drawmap/'">검색</button>
     </div>
 </body>
 </html>
